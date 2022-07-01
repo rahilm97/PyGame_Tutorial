@@ -34,9 +34,9 @@ while 1:
                 status = -status
     
     if status == -1: 
-        mixer.pause()
+        mixer.music.pause()
     if status == 1:
-        mixer.unpause()
+        mixer.music.unpause()
         ballrect = ballrect.move(speed)
     if ballrect.left < 0 or ballrect.right > width:
         speed[0] = -speed[0]
