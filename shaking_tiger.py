@@ -17,8 +17,8 @@ black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
 
-ball = pygame.image.load("tiger.png")
-ballrect = ball.get_rect()
+tiger = pygame.image.load("tiger.png")
+tigerrect = tiger.get_rect()
 
 # Set preferred volume
 mixer.music.set_volume(0.2)
@@ -37,12 +37,12 @@ while 1:
         mixer.music.pause()
     if status == 1:
         mixer.music.unpause()
-        ballrect = ballrect.move(speed)
-    if ballrect.left < 0 or ballrect.right > width:
+        tigerrect = tigerrect.move(speed)
+    if tigerrect.left < 0 or tigerrect.right > width:
         speed[0] = -speed[0]
-    if ballrect.top < 0 or ballrect.bottom > height:
+    if tigerrect.top < 0 or tigerrect.bottom > height:
         speed[1] = -speed[1]
 
     screen.fill(black)
-    screen.blit(ball, ballrect)
+    screen.blit(tiger, tigerrect)
     pygame.display.flip()
